@@ -1,45 +1,21 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://src/scenes/Enemy_KinematicBody2D2.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/scenes/Pet_KinematicBody2D.tscn" type="PackedScene" id=2]
 [ext_resource path="res://src/scenes/Player_KinematicBody2D.tscn" type="PackedScene" id=3]
+[ext_resource path="res://src/scripts/ParallaxBackground.gd" type="Script" id=4]
 [ext_resource path="res://src/scenes/TestStageCopy.tscn" type="PackedScene" id=5]
+[ext_resource path="res://proj/bg1-frontlayer.png" type="Texture" id=6]
 [ext_resource path="res://proj/bg1.png" type="Texture" id=7]
+[ext_resource path="res://proj/bg1-frontlayer2.png" type="Texture" id=8]
 
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 155.592, 10 )
-
-[sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 74.6348, 10 )
-
-[sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 74.6348, 10 )
-
-[sub_resource type="RectangleShape2D" id=4]
-extents = Vector2( 61.6623, 10 )
-
-[sub_resource type="RectangleShape2D" id=5]
-extents = Vector2( 51.8073, 10.2701 )
-
-[sub_resource type="RectangleShape2D" id=6]
-extents = Vector2( 163.904, 10.6019 )
-
-[sub_resource type="RectangleShape2D" id=7]
-extents = Vector2( 97.8755, 10.9866 )
-
-[sub_resource type="RectangleShape2D" id=8]
-extents = Vector2( 96.9759, 10.1712 )
-
-[sub_resource type="RectangleShape2D" id=9]
-extents = Vector2( 103.209, 10.6894 )
-
-[sub_resource type="SegmentShape2D" id=10]
+[sub_resource type="SegmentShape2D" id=1]
 a = Vector2( -0.235275, -50.458 )
-b = Vector2( -0.145157, 150.973 )
+b = Vector2( 1.27023, 517.434 )
 
-[sub_resource type="SegmentShape2D" id=11]
+[sub_resource type="SegmentShape2D" id=2]
 a = Vector2( -1.25256, -86.2435 )
-b = Vector2( -1.22205, 151.12 )
+b = Vector2( 0, 520 )
 
 [node name="Node2D" type="Node2D"]
 
@@ -48,91 +24,32 @@ b = Vector2( -1.22205, 151.12 )
 [node name="Player_KinematicBody2D" parent="." instance=ExtResource( 3 )]
 
 [node name="Enemy_KinematicBody2D2" parent="." instance=ExtResource( 1 )]
+z_index = 1
 
 [node name="Level" parent="." instance=ExtResource( 5 )]
-
-[node name="CollisionShape2D" type="StaticBody2D" parent="Level"]
-position = Vector2( 145, 380 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/CollisionShape2D"]
-position = Vector2( 10.6654, 62.8449 )
-shape = SubResource( 1 )
-
-[node name="CollisionShape2D8" type="StaticBody2D" parent="Level"]
-position = Vector2( 145, 380 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/CollisionShape2D8"]
-position = Vector2( 156.277, 147.485 )
-rotation = 1.57079
-shape = SubResource( 2 )
-
-[node name="CollisionShape2D9" type="StaticBody2D" parent="Level"]
-position = Vector2( 145, 380 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/CollisionShape2D9"]
-position = Vector2( 241.557, 146.87 )
-rotation = 1.57079
-shape = SubResource( 3 )
-
-[node name="CollisionShape2D2" type="StaticBody2D" parent="Level"]
-position = Vector2( 145, 380 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/CollisionShape2D2"]
-position = Vector2( 293.247, 62.3699 )
-shape = SubResource( 4 )
-
-[node name="CollisionShape2D3" type="StaticBody2D" parent="Level"]
-position = Vector2( 145, 380 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/CollisionShape2D3"]
-position = Vector2( 443.476, 14.029 )
-shape = SubResource( 5 )
-
-[node name="CollisionShape2D4" type="StaticBody2D" parent="Level"]
-position = Vector2( 145, 380 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/CollisionShape2D4"]
-position = Vector2( 511.531, 102.359 )
-rotation = 0.244346
-shape = SubResource( 6 )
-
-[node name="CollisionShape2D5" type="StaticBody2D" parent="Level"]
-position = Vector2( 145, 380 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/CollisionShape2D5"]
-position = Vector2( 592.823, -9.24518 )
-rotation = -0.244346
-shape = SubResource( 7 )
-
-[node name="CollisionShape2D6" type="StaticBody2D" parent="Level"]
-position = Vector2( 145, 380 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/CollisionShape2D6"]
-position = Vector2( 782.012, -33.39 )
-shape = SubResource( 8 )
-
-[node name="CollisionShape2D7" type="StaticBody2D" parent="Level"]
-position = Vector2( 145, 380 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/CollisionShape2D7"]
-position = Vector2( 775.918, 142.3 )
-shape = SubResource( 9 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Level"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level/StaticBody2D"]
 position = Vector2( -1.27023, 282.566 )
-shape = SubResource( 10 )
+shape = SubResource( 1 )
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="Level"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level/StaticBody2D2"]
-position = Vector2( 1026.69, 360.511 )
-shape = SubResource( 11 )
+position = Vector2( 1344, 272 )
+shape = SubResource( 2 )
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 offset = Vector2( 160, 90 )
 transform = Transform2D( 1, 0, 0, 1, 160, 90 )
+script = ExtResource( 4 )
 
 [node name="background" type="Sprite" parent="ParallaxBackground"]
 texture = ExtResource( 7 )
+
+[node name="background_frontlayer" type="Sprite" parent="ParallaxBackground"]
+texture = ExtResource( 6 )
+
+[node name="background_frontlayer2" type="Sprite" parent="ParallaxBackground"]
+texture = ExtResource( 8 )
