@@ -1,4 +1,4 @@
-[gd_scene load_steps=66 format=2]
+[gd_scene load_steps=67 format=2]
 
 [ext_resource path="res://src/assets/Player/MCBody.png" type="Texture" id=1]
 [ext_resource path="res://src/scripts/Player_Movement.gd" type="Script" id=2]
@@ -230,7 +230,7 @@ animations = [ {
 extents = Vector2( 12.0409, 11.9933 )
 
 [sub_resource type="RectangleShape2D" id=45]
-extents = Vector2( 155.592, 10 )
+extents = Vector2( 157.535, 8 )
 
 [sub_resource type="RectangleShape2D" id=46]
 extents = Vector2( 74.6348, 10 )
@@ -239,30 +239,33 @@ extents = Vector2( 74.6348, 10 )
 extents = Vector2( 74.6348, 10 )
 
 [sub_resource type="RectangleShape2D" id=48]
-extents = Vector2( 61.6623, 10 )
+extents = Vector2( 60, 10 )
 
 [sub_resource type="RectangleShape2D" id=49]
-extents = Vector2( 51.8073, 10.2701 )
+extents = Vector2( 51.0125, 4.21893 )
 
 [sub_resource type="RectangleShape2D" id=50]
-extents = Vector2( 163.904, 10.6019 )
+extents = Vector2( 296.622, 10.6019 )
 
 [sub_resource type="RectangleShape2D" id=51]
-extents = Vector2( 97.8755, 10.9866 )
+extents = Vector2( 97.0615, 6.77209 )
+
+[sub_resource type="RectangleShape2D" id=56]
+extents = Vector2( 129.513, 3.87372 )
 
 [sub_resource type="RectangleShape2D" id=52]
-extents = Vector2( 96.9759, 10.1712 )
+extents = Vector2( 98.8836, 5.46686 )
 
 [sub_resource type="RectangleShape2D" id=53]
-extents = Vector2( 103.209, 10.6894 )
+extents = Vector2( 33.7859, 2.76181 )
 
 [sub_resource type="SegmentShape2D" id=54]
 a = Vector2( -0.235275, -50.458 )
 b = Vector2( -0.145157, 150.973 )
 
 [sub_resource type="SegmentShape2D" id=55]
-a = Vector2( -1.25256, -86.2435 )
-b = Vector2( -1.22205, 151.12 )
+a = Vector2( -2.35291, -102.443 )
+b = Vector2( -2.72156, -54.4483 )
 
 [node name="Node2D" type="Node2D"]
 
@@ -272,6 +275,7 @@ z_index = 2
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Pet_KinematicBody2D"]
 frames = SubResource( 7 )
+frame = 5
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Pet_KinematicBody2D"]
@@ -293,7 +297,7 @@ material = SubResource( 9 )
 current = true
 limit_left = 0
 limit_top = 0
-limit_right = 1024
+limit_right = 1400
 limit_bottom = 600
 limit_smoothed = true
 drag_margin_h_enabled = true
@@ -344,7 +348,7 @@ shape = SubResource( 44 )
 position = Vector2( 145, 380 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level/CollisionShape2D"]
-position = Vector2( 10.6654, 62.8449 )
+position = Vector2( 9.48062, 68.0805 )
 shape = SubResource( 45 )
 
 [node name="CollisionShape2D8" type="StaticBody2D" parent="Level"]
@@ -367,21 +371,21 @@ shape = SubResource( 47 )
 position = Vector2( 145, 380 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level/CollisionShape2D2"]
-position = Vector2( 293.247, 62.3699 )
+position = Vector2( 291, 70 )
 shape = SubResource( 48 )
 
 [node name="CollisionShape2D3" type="StaticBody2D" parent="Level"]
 position = Vector2( 145, 380 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level/CollisionShape2D3"]
-position = Vector2( 443.476, 14.029 )
+position = Vector2( 443.895, 15.8151 )
 shape = SubResource( 49 )
 
 [node name="CollisionShape2D4" type="StaticBody2D" parent="Level"]
 position = Vector2( 145, 380 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level/CollisionShape2D4"]
-position = Vector2( 511.531, 102.359 )
+position = Vector2( 636, 142 )
 rotation = 0.244346
 shape = SubResource( 50 )
 
@@ -389,34 +393,55 @@ shape = SubResource( 50 )
 position = Vector2( 145, 380 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level/CollisionShape2D5"]
-position = Vector2( 592.823, -9.24518 )
+position = Vector2( 590.61, -5.33441 )
 rotation = -0.244346
 shape = SubResource( 51 )
+
+[node name="CollisionShape2D10" type="StaticBody2D" parent="Level"]
+position = Vector2( 145, 380 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/CollisionShape2D10"]
+position = Vector2( 1007.08, -63.0223 )
+rotation = -0.244346
+shape = SubResource( 56 )
 
 [node name="CollisionShape2D6" type="StaticBody2D" parent="Level"]
 position = Vector2( 145, 380 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level/CollisionShape2D6"]
-position = Vector2( 782.012, -33.39 )
+position = Vector2( 781.95, -29.9592 )
 shape = SubResource( 52 )
 
 [node name="CollisionShape2D7" type="StaticBody2D" parent="Level"]
 position = Vector2( 145, 380 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level/CollisionShape2D7"]
-position = Vector2( 775.918, 142.3 )
+position = Vector2( 954.157, 205.716 )
+shape = SubResource( 53 )
+
+[node name="CollisionShape2D11" type="StaticBody2D" parent="Level"]
+position = Vector2( 145, 380 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/CollisionShape2D11"]
+position = Vector2( 1165.3, -95.3497 )
 shape = SubResource( 53 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Level"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level/StaticBody2D"]
-position = Vector2( -1.27023, 282.566 )
+position = Vector2( -1.37819, 289.136 )
 shape = SubResource( 54 )
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="Level"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level/StaticBody2D2"]
-position = Vector2( 1026.69, 360.511 )
+position = Vector2( 1348.22, 337.028 )
+shape = SubResource( 55 )
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="Level"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/StaticBody2D3"]
+position = Vector2( 1128, 640 )
 shape = SubResource( 55 )
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
