@@ -92,7 +92,7 @@ shape = SubResource( 67 )
 position = Vector2( 145, 380 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level/CollisionShape2D4"]
-position = Vector2( 511.531, 102.359 )
+position = Vector2( 636, 142 )
 rotation = 0.244346
 shape = SubResource( 68 )
 
@@ -100,9 +100,17 @@ shape = SubResource( 68 )
 position = Vector2( 145, 380 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level/CollisionShape2D5"]
-position = Vector2( 592.823, -9.24518 )
+position = Vector2( 590.61, -5.33441 )
 rotation = -0.244346
 shape = SubResource( 69 )
+
+[node name="CollisionShape2D10" type="StaticBody2D" parent="Level"]
+position = Vector2( 145, 380 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/CollisionShape2D10"]
+position = Vector2( 1007.08, -63.0223 )
+rotation = -0.244346
+shape = SubResource( 56 )
 
 [node name="CollisionShape2D6" type="StaticBody2D" parent="Level"]
 position = Vector2( 145, 380 )
