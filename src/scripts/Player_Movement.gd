@@ -9,29 +9,25 @@ var look_direction = Vector2(1,0)
 
 var velocity = Vector2()
 
-onready var body = get_node("PlayerBodySprite")
-onready var armFront = get_node("PlayerArmFrontSprite")
-onready var armBack = get_node("PlayerArmBackSprite")
-
 func ready():
-	body.play("idle")
-	body.speed_scale = 1
-	armFront.visibility = true
+	$body.play("idle")
+	$body.speed_scale = 1
+	$armFront.visibility = true
 	
 func shoot():
 	if Input.is_action_just_pressed("shoot"):
-		if armFront.visible:
-			armFront.play("Fire")
-			yield(armFront, "animation_finished")
-			armFront.play("Return")
-			yield(armFront, "animation_finished")
-			armFront.play("idle")
+		if $armFront.visible:
+			$armFront.play("Fire")
+			yield($armFront, "animation_finished")
+			$armFront.play("Return")
+			yield($armFront, "animation_finished")
+			$armFront.play("idle")
 		else:
-			armBack.play("Fire")
-			yield(armBack, "animation_finished")
-			armBack.play("Return")
-			yield(armBack, "animation_finished")
-			armBack.play("idle")
+			$armBack.play("Fire")
+			yield($armBack, "animation_finished")
+			$armBack.play("Return")
+			yield($armBack, "animation_finished")
+			$armBack.play("idle")
 
 # play animations
 func _process(_delta):
