@@ -3,8 +3,11 @@ extends KinematicBody2D
 const WALK_SPEED = 1000
 const WALK_MAX_SPEED = 150
 const STOP_FORCE = 800
-const JUMP_SPEED = 400
+const JUMP_SPEED = 300
 const GRAVITY = 700
+
+# the direction the player is looking
+var look_direction = Vector2(1,0)
 
 var velocity = Vector2()
 
