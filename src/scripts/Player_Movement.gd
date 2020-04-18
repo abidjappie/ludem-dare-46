@@ -11,17 +11,33 @@ var look_direction = Vector2(1,0)
 
 var velocity = Vector2()
 
+onready var body = get_node("PlayerBodySprite")
+onready var armFront = get_node("PlayerArmFrontSprite")
+onready var armBack = get_node("PlayerArmBackSprite")
+
 func ready():
-	$PlayerBodySprite.play("idle")
-	$PlayerBodySprite.speed_scale = 1
-	$PlayerArmFrontSprite.visibility = true
+	body.play("idle")
+	body.speed_scale = 1
+	armFront.visibility = true
 	
 func shoot():
-	if Input.action_press("shoot"):
-		print("Shoot!")
+	if Input.is_action_just_pressed("shoot"):
+		if armFront.visible:
+			armFront.play("Fire")
+			yield(armFront, "animation_finished")
+			armFront.play("Return")
+			yield(armFront, "animation_finished")
+			armFront.play("idle")
+		else:
+			armBack.play("Fire")
+			yield(armBack, "animation_finished")
+			armBack.play("Return")
+			yield(armBack, "animation_finished")
+			armBack.play("idle")
 
 # play animations
 func _process(_delta):
+	shoot()
 	if Input.is_action_pressed("right"):
 		$PlayerBodySprite.speed_scale = 2
 		$PlayerBodySprite.flip_h = false
@@ -38,10 +54,9 @@ func _process(_delta):
 	elif Input.is_action_just_pressed("jump"):
 		$PlayerBodySprite.speed_scale = 1
 		$PlayerBodySprite.play("Jump")
-	else:
-		if is_on_floor():
-			$PlayerBodySprite.speed_scale = 1
-			$PlayerBodySprite.play("idle")
+	elif is_on_floor():
+		$PlayerBodySprite.speed_scale = 1
+		$PlayerBodySprite.play("idle")
 
 func _physics_process(delta):
 	var walk = WALK_SPEED * (Input.get_action_strength("right") - Input.get_action_strength("left"))
