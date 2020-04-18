@@ -1,12 +1,16 @@
 extends KinematicBody2D
 
-const WALK_SPEED = 2000
+const WALK_SPEED = 1000
 const WALK_MAX_SPEED = 150
 const STOP_FORCE = 800
 const JUMP_SPEED = 400
 const GRAVITY = 700
 
 var velocity = Vector2()
+
+func shoot():
+	if Input.action_press("shoot"):
+		print("Shoot!")
 
 func _physics_process(delta):
 	var walk = WALK_SPEED * (Input.get_action_strength("right") - Input.get_action_strength("left"))
