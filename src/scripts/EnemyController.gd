@@ -9,8 +9,6 @@ const GRAVITY = 700
 var velocity = Vector2()
 
 func _physics_process(delta):
-	velocity.x += WALK_SPEED * delta
-	
 	# clamp the maximum horizontal movement speed
 	velocity.x = clamp(velocity.x, -WALK_MAX_SPEED, WALK_MAX_SPEED)
 	
