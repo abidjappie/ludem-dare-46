@@ -6,38 +6,38 @@
 [ext_resource path="res://src/scenes/TestStageCopy.tscn" type="PackedScene" id=5]
 [ext_resource path="res://proj/bg1.png" type="Texture" id=7]
 
-[sub_resource type="RectangleShape2D" id=63]
+[sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 155.592, 10 )
 
-[sub_resource type="RectangleShape2D" id=64]
+[sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 74.6348, 10 )
 
-[sub_resource type="RectangleShape2D" id=65]
+[sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 74.6348, 10 )
 
-[sub_resource type="RectangleShape2D" id=66]
+[sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 61.6623, 10 )
 
-[sub_resource type="RectangleShape2D" id=67]
+[sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 51.8073, 10.2701 )
 
-[sub_resource type="RectangleShape2D" id=68]
+[sub_resource type="RectangleShape2D" id=6]
 extents = Vector2( 163.904, 10.6019 )
 
-[sub_resource type="RectangleShape2D" id=69]
+[sub_resource type="RectangleShape2D" id=7]
 extents = Vector2( 97.8755, 10.9866 )
 
-[sub_resource type="RectangleShape2D" id=70]
+[sub_resource type="RectangleShape2D" id=8]
 extents = Vector2( 96.9759, 10.1712 )
 
-[sub_resource type="RectangleShape2D" id=71]
+[sub_resource type="RectangleShape2D" id=9]
 extents = Vector2( 103.209, 10.6894 )
 
-[sub_resource type="SegmentShape2D" id=72]
+[sub_resource type="SegmentShape2D" id=10]
 a = Vector2( -0.235275, -50.458 )
 b = Vector2( -0.145157, 150.973 )
 
-[sub_resource type="SegmentShape2D" id=73]
+[sub_resource type="SegmentShape2D" id=11]
 a = Vector2( -1.25256, -86.2435 )
 b = Vector2( -1.22205, 151.12 )
 
@@ -56,7 +56,7 @@ position = Vector2( 145, 380 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level/CollisionShape2D"]
 position = Vector2( 10.6654, 62.8449 )
-shape = SubResource( 63 )
+shape = SubResource( 1 )
 
 [node name="CollisionShape2D8" type="StaticBody2D" parent="Level"]
 position = Vector2( 145, 380 )
@@ -64,7 +64,7 @@ position = Vector2( 145, 380 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level/CollisionShape2D8"]
 position = Vector2( 156.277, 147.485 )
 rotation = 1.57079
-shape = SubResource( 64 )
+shape = SubResource( 2 )
 
 [node name="CollisionShape2D9" type="StaticBody2D" parent="Level"]
 position = Vector2( 145, 380 )
@@ -72,21 +72,21 @@ position = Vector2( 145, 380 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level/CollisionShape2D9"]
 position = Vector2( 241.557, 146.87 )
 rotation = 1.57079
-shape = SubResource( 65 )
+shape = SubResource( 3 )
 
 [node name="CollisionShape2D2" type="StaticBody2D" parent="Level"]
 position = Vector2( 145, 380 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level/CollisionShape2D2"]
 position = Vector2( 293.247, 62.3699 )
-shape = SubResource( 66 )
+shape = SubResource( 4 )
 
 [node name="CollisionShape2D3" type="StaticBody2D" parent="Level"]
 position = Vector2( 145, 380 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level/CollisionShape2D3"]
 position = Vector2( 443.476, 14.029 )
-shape = SubResource( 67 )
+shape = SubResource( 5 )
 
 [node name="CollisionShape2D4" type="StaticBody2D" parent="Level"]
 position = Vector2( 145, 380 )
@@ -94,7 +94,7 @@ position = Vector2( 145, 380 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level/CollisionShape2D4"]
 position = Vector2( 511.531, 102.359 )
 rotation = 0.244346
-shape = SubResource( 68 )
+shape = SubResource( 6 )
 
 [node name="CollisionShape2D5" type="StaticBody2D" parent="Level"]
 position = Vector2( 145, 380 )
@@ -102,33 +102,33 @@ position = Vector2( 145, 380 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level/CollisionShape2D5"]
 position = Vector2( 592.823, -9.24518 )
 rotation = -0.244346
-shape = SubResource( 69 )
+shape = SubResource( 7 )
 
 [node name="CollisionShape2D6" type="StaticBody2D" parent="Level"]
 position = Vector2( 145, 380 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level/CollisionShape2D6"]
 position = Vector2( 782.012, -33.39 )
-shape = SubResource( 70 )
+shape = SubResource( 8 )
 
 [node name="CollisionShape2D7" type="StaticBody2D" parent="Level"]
 position = Vector2( 145, 380 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level/CollisionShape2D7"]
 position = Vector2( 775.918, 142.3 )
-shape = SubResource( 71 )
+shape = SubResource( 9 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Level"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level/StaticBody2D"]
 position = Vector2( -1.27023, 282.566 )
-shape = SubResource( 72 )
+shape = SubResource( 10 )
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="Level"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level/StaticBody2D2"]
 position = Vector2( 1026.69, 360.511 )
-shape = SubResource( 73 )
+shape = SubResource( 11 )
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 offset = Vector2( 160, 90 )
