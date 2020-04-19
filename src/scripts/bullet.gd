@@ -2,6 +2,7 @@ extends Area2D
 
 # apply a velocity
 export var velocity = Vector2()
+var from_who
 
 # Called when the node enters the scene tree for the first time.
 
@@ -14,6 +15,6 @@ func _process(delta):
 	translate(velocity * delta)
 
 
-
 func _on_bullet_area_entered(area):
-	queue_free()
+	if (area.get_parent().get_name() != from_who) and (area.get_name() != from_who):
+		queue_free()

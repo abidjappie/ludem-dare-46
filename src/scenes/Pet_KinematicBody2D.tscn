@@ -38,7 +38,7 @@ animations = [ {
 [sub_resource type="CircleShape2D" id=8]
 radius = 9.30332
 
-[node name="Pet_KinematicBody2D" type="KinematicBody2D"]
+[node name="Pet_Node" type="Area2D"]
 position = Vector2( 60, 400 )
 z_index = 2
 script = ExtResource( 2 )
@@ -49,4 +49,3 @@ playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 8 )
-disabled = true

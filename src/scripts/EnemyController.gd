@@ -6,6 +6,8 @@ const STOP_FORCE = 800
 const JUMP_SPEED = 400
 const GRAVITY = 700
 const BULLET_SPEED = 400
+const VISION = 128
+const RANGE = 96
 
 var animation = ['Idle', 'Running', 'Fire', 'Death']
 var velocity = Vector2()
@@ -27,7 +29,7 @@ func _physics_process(delta):
 		
 		
 		# If player is within range
-		if (distance_from_player < 128 && distance_from_player > 64):
+		if (distance_from_player < VISION && distance_from_player > RANGE):
 			if (player.position.x > position.x):
 				velocity.x = 10
 				if ($AnimatedSprite.animation != "Running"):
@@ -42,7 +44,7 @@ func _physics_process(delta):
 					$AnimatedSprite.play()
 				$AnimatedSprite.flip_h = true
 				$AnimatedSprite.set_offset(Vector2(-3, 0))
-		elif (distance_from_player < 64 && height_from_player < 16):
+		elif (distance_from_player < RANGE && height_from_player < 16):
 			if (player.position.x > position.x):
 				$AnimatedSprite.flip_h = false
 				$AnimatedSprite.set_offset(Vector2(3, 0))
@@ -50,19 +52,21 @@ func _physics_process(delta):
 				$AnimatedSprite.flip_h = true
 				$AnimatedSprite.set_offset(Vector2(-3, 0))
 			velocity.x = 0
-			if ($AnimatedSprite.get_frame() == 1 and !shooting):
-				shoot()
-			elif ($AnimatedSprite.get_frame() == 0):
-				shooting = false
 			if ($AnimatedSprite.animation != "Fire"):
 					$AnimatedSprite.animation = "Fire"
 					$AnimatedSprite.play()
-					$AnimatedSprite.set_speed_scale(0.75)
+					$AnimatedSprite.set_speed_scale(1)
 		else:
 			velocity.x = 0
 			if is_alive:
 				$AnimatedSprite.animation = "Idle"
-			
+		
+		if ($AnimatedSprite.animation == "Fire"):	
+			if ($AnimatedSprite.get_frame() == 1 and !shooting):
+				shooting = true
+				shoot()
+			elif ($AnimatedSprite.get_frame() == 0):
+				shooting = false
 		
 		# clamp the maximum horizontal movement speed
 		velocity.x = clamp(velocity.x, -WALK_MAX_SPEED, WALK_MAX_SPEED)
@@ -75,11 +79,11 @@ func _physics_process(delta):
 		position += velocity * delta
 
 func shoot():
-	shooting = true
 	var bullet = scn_bullet.instance()
+	bullet.from_who = get_name()
 	bullet.get_node("AnimatedSprite").animation = "bullet"
 	bullet.position = get_node(".").position
-	bullet.position.y -= 4
+	bullet.position.y -= 2
 	if $AnimatedSprite.flip_h:
 		bullet.velocity.x = -BULLET_SPEED
 	else:
@@ -87,8 +91,8 @@ func shoot():
 	$'..'.add_child(bullet)
 
 func _bullet_area_entered(area):
-	is_alive = false
-	if (area.get_name() == "bullet"):
+	if (area.get_name() == "bullet" and area.from_who=="player"):
+		is_alive = false
 		$AnimatedSprite.speed_scale = 1
 		$AnimatedSprite.play("Death1")
 		yield($AnimatedSprite, "animation_finished")
