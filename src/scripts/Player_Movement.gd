@@ -21,7 +21,7 @@ func shoot():
 	if Input.is_action_just_pressed("shoot"):
 		var bullet = scn_bullet.instance()
 		bullet.position = get_node(".").position
-		bullet.position.y -= 4
+		bullet.position.y -= 2
 		if $body.flip_h:
 			bullet.position.x -= BULLET_SPAWN_OFFSET
 			bullet.velocity.x = -BULLET_SPEED
