@@ -31,21 +31,10 @@ b = Vector2( 0, 520 )
 [node name="Enemy_KinematicBody2D2" parent="." instance=ExtResource( 1 )]
 z_index = 1
 
-[node name="Level" parent="." instance=ExtResource( 5 )]
+[node name="EnemyIFV_KB2D" parent="." instance=ExtResource( 10 )]
+position = Vector2( 592, 376 )
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Level"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/StaticBody2D"]
-position = Vector2( -1.27023, 282.566 )
-shape = SubResource( 1 )
-
-[node name="StaticBody2D2" type="StaticBody2D" parent="Level"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/StaticBody2D2"]
-position = Vector2( 1552, 272 )
-shape = SubResource( 2 )
-
-[node name="EnemyGrenadier_KB2D" parent="Level/StaticBody2D2" instance=ExtResource( 11 )]
+[node name="EnemyGrenadier_KB2D" parent="." instance=ExtResource( 11 )]
 position = Vector2( 1232, 568 )
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
@@ -62,52 +51,96 @@ texture = ExtResource( 6 )
 [node name="background_frontlayer2" type="Sprite" parent="ParallaxBackground"]
 texture = ExtResource( 8 )
 
-[node name="EnemyIFV_KB2D" parent="." instance=ExtResource( 10 )]
-position = Vector2( 592, 376 )
+[node name="DestructibleBlockLayer" type="Node" parent="."]
 
-[node name="Node" type="Node" parent="."]
+[node name="Node2D" parent="DestructibleBlockLayer" instance=ExtResource( 12 )]
+position = Vector2( 776, 784 )
 
-[node name="Node2D" parent="Node" instance=ExtResource( 12 )]
-position = Vector2( 776, 776 )
+[node name="Node2D2" parent="DestructibleBlockLayer" instance=ExtResource( 12 )]
+position = Vector2( 776, 768 )
 
-[node name="Node2D2" parent="Node" instance=ExtResource( 12 )]
-position = Vector2( 776, 760 )
+[node name="Node2D3" parent="DestructibleBlockLayer" instance=ExtResource( 12 )]
+position = Vector2( 776, 752 )
 
-[node name="Node2D3" parent="Node" instance=ExtResource( 12 )]
-position = Vector2( 776, 744 )
+[node name="Node2D4" parent="DestructibleBlockLayer" instance=ExtResource( 12 )]
+position = Vector2( 776, 736 )
 
-[node name="Node2D4" parent="Node" instance=ExtResource( 12 )]
-position = Vector2( 776, 728 )
+[node name="Node2D16" parent="DestructibleBlockLayer" instance=ExtResource( 12 )]
+position = Vector2( 776, 720 )
 
-[node name="Node2D5" parent="Node" instance=ExtResource( 9 )]
+[node name="Node2D25" parent="DestructibleBlockLayer" instance=ExtResource( 12 )]
+position = Vector2( 48, 832 )
+
+[node name="Node2D26" parent="DestructibleBlockLayer" instance=ExtResource( 12 )]
+position = Vector2( 48, 816 )
+
+[node name="Node2D5" parent="DestructibleBlockLayer" instance=ExtResource( 9 )]
 position = Vector2( 408, 704 )
 
-[node name="Node2D6" parent="Node" instance=ExtResource( 9 )]
+[node name="Node2D6" parent="DestructibleBlockLayer" instance=ExtResource( 9 )]
 position = Vector2( 408, 688 )
 
-[node name="Node2D7" parent="Node" instance=ExtResource( 9 )]
+[node name="Node2D7" parent="DestructibleBlockLayer" instance=ExtResource( 9 )]
 position = Vector2( 408, 672 )
 
-[node name="Node2D8" parent="Node" instance=ExtResource( 9 )]
+[node name="Node2D8" parent="DestructibleBlockLayer" instance=ExtResource( 9 )]
 position = Vector2( 408, 656 )
 
-[node name="Node2D9" parent="Node" instance=ExtResource( 13 )]
-position = Vector2( 1232, 768 )
+[node name="Node2D23" parent="DestructibleBlockLayer" instance=ExtResource( 9 )]
+position = Vector2( 56, 864 )
 
-[node name="Node2D10" parent="Node" instance=ExtResource( 13 )]
-position = Vector2( 1232, 736 )
+[node name="Node2D24" parent="DestructibleBlockLayer" instance=ExtResource( 9 )]
+position = Vector2( 56, 848 )
 
-[node name="Node2D11" parent="Node" instance=ExtResource( 13 )]
-position = Vector2( 1184, 768 )
+[node name="Node2D9" parent="DestructibleBlockLayer" instance=ExtResource( 13 )]
+position = Vector2( 1408, 744 )
 
-[node name="Node2D12" parent="Node" instance=ExtResource( 13 )]
-position = Vector2( 1280, 768 )
+[node name="Node2D10" parent="DestructibleBlockLayer" instance=ExtResource( 13 )]
+position = Vector2( 1432, 776 )
 
-[node name="Node2D13" parent="Node" instance=ExtResource( 13 )]
-position = Vector2( 1528, 672 )
+[node name="Node2D11" parent="DestructibleBlockLayer" instance=ExtResource( 13 )]
+position = Vector2( 1480, 776 )
 
-[node name="Node2D14" parent="Node" instance=ExtResource( 13 )]
-position = Vector2( 1544, 640 )
+[node name="Node2D12" parent="DestructibleBlockLayer" instance=ExtResource( 13 )]
+position = Vector2( 1384, 776 )
 
-[node name="Node2D15" parent="Node" instance=ExtResource( 13 )]
-position = Vector2( 1560, 608 )
+[node name="Node2D13" parent="DestructibleBlockLayer" instance=ExtResource( 13 )]
+position = Vector2( 1528, 680 )
+
+[node name="Node2D14" parent="DestructibleBlockLayer" instance=ExtResource( 13 )]
+position = Vector2( 1544, 648 )
+
+[node name="Node2D15" parent="DestructibleBlockLayer" instance=ExtResource( 13 )]
+position = Vector2( 1560, 616 )
+
+[node name="Node2D17" parent="DestructibleBlockLayer" instance=ExtResource( 13 )]
+position = Vector2( 360, 968 )
+
+[node name="Node2D18" parent="DestructibleBlockLayer" instance=ExtResource( 13 )]
+position = Vector2( 352, 1032 )
+
+[node name="Node2D22" parent="DestructibleBlockLayer" instance=ExtResource( 13 )]
+position = Vector2( 304, 1032 )
+
+[node name="Node2D19" parent="DestructibleBlockLayer" instance=ExtResource( 13 )]
+position = Vector2( 328, 1000 )
+
+[node name="Node2D20" parent="DestructibleBlockLayer" instance=ExtResource( 13 )]
+position = Vector2( 400, 1032 )
+
+[node name="Node2D21" parent="DestructibleBlockLayer" instance=ExtResource( 13 )]
+position = Vector2( 376, 1000 )
+
+[node name="Level" parent="." instance=ExtResource( 5 )]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Level"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/StaticBody2D"]
+position = Vector2( -1.27023, 282.566 )
+shape = SubResource( 1 )
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="Level"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/StaticBody2D2"]
+position = Vector2( 1552, 272 )
+shape = SubResource( 2 )
