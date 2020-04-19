@@ -22,52 +22,52 @@
 [ext_resource path="res://src/assets/HUDBackground.png" type="Texture" id=20]
 [ext_resource path="res://src/assets/HUDHPBar.png" type="Texture" id=21]
 
-[sub_resource type="AtlasTexture" id=3]
+[sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 19 )
 region = Rect2( 0, 0, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=4]
+[sub_resource type="AtlasTexture" id=2]
 atlas = ExtResource( 19 )
 region = Rect2( 32, 0, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=5]
+[sub_resource type="AtlasTexture" id=3]
 atlas = ExtResource( 19 )
 region = Rect2( 64, 0, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=6]
+[sub_resource type="AtlasTexture" id=4]
 atlas = ExtResource( 19 )
 region = Rect2( 96, 0, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=7]
+[sub_resource type="AtlasTexture" id=5]
 atlas = ExtResource( 19 )
 region = Rect2( 128, 0, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=8]
+[sub_resource type="AtlasTexture" id=6]
 atlas = ExtResource( 19 )
 region = Rect2( 160, 0, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=9]
+[sub_resource type="AtlasTexture" id=7]
 atlas = ExtResource( 19 )
 region = Rect2( 192, 0, 32, 32 )
 
-[sub_resource type="SpriteFrames" id=10]
+[sub_resource type="SpriteFrames" id=8]
 animations = [ {
-"frames": [ SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ) ],
+"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ) ],
 "loop": true,
 "name": "Idle",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 9 ) ],
+"frames": [ SubResource( 7 ) ],
 "loop": true,
 "name": "Damage",
 "speed": 5.0
 } ]
 
-[sub_resource type="SegmentShape2D" id=1]
+[sub_resource type="SegmentShape2D" id=9]
 a = Vector2( -0.235275, -50.458 )
 b = Vector2( 1.27023, 517.434 )
 
-[sub_resource type="SegmentShape2D" id=2]
+[sub_resource type="SegmentShape2D" id=10]
 a = Vector2( -1.25256, -86.2435 )
 b = Vector2( 0, 520 )
 
@@ -77,6 +77,30 @@ b = Vector2( 0, 520 )
 z_index = 3
 
 [node name="Player_KinematicBody2D" parent="." instance=ExtResource( 3 )]
+
+[node name="HUD" type="ParallaxBackground" parent="."]
+layer = 100
+offset = Vector2( 64, 20 )
+scale = Vector2( 0.75, 0.75 )
+transform = Transform2D( 0.75, 0, 0, 0.75, 64, 20 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="HUD"]
+z_index = 2
+frames = SubResource( 8 )
+animation = "Idle"
+frame = 4
+playing = true
+offset = Vector2( -56, 0 )
+
+[node name="Sprite" type="Sprite" parent="HUD"]
+z_index = 1
+texture = ExtResource( 20 )
+
+[node name="Sprite2" type="Sprite" parent="HUD"]
+position = Vector2( 20, -8 )
+scale = Vector2( 1, 0.35 )
+z_index = 3
+texture = ExtResource( 21 )
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 offset = Vector2( 160, 90 )
@@ -91,29 +115,6 @@ texture = ExtResource( 6 )
 
 [node name="background_frontlayer2" type="Sprite" parent="ParallaxBackground"]
 texture = ExtResource( 8 )
-
-[node name="Node2D" type="Node2D" parent="ParallaxBackground"]
-position = Vector2( -94, -69 )
-scale = Vector2( 0.75, 0.75 )
-z_index = 6
-z_as_relative = false
-
-[node name="AnimatedSprite" type="AnimatedSprite" parent="ParallaxBackground/Node2D"]
-z_index = 2
-frames = SubResource( 10 )
-animation = "Idle"
-playing = true
-offset = Vector2( -56, 0 )
-
-[node name="Sprite" type="Sprite" parent="ParallaxBackground/Node2D"]
-z_index = 1
-texture = ExtResource( 20 )
-
-[node name="Sprite2" type="Sprite" parent="ParallaxBackground/Node2D"]
-position = Vector2( 20, -8 )
-scale = Vector2( 1, 0.35 )
-z_index = 3
-texture = ExtResource( 21 )
 
 [node name="DestructibleBlockLayer" type="Node" parent="."]
 
@@ -219,13 +220,13 @@ position = Vector2( 376, 1000 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level/StaticBody2D"]
 position = Vector2( -1.27023, 282.566 )
-shape = SubResource( 1 )
+shape = SubResource( 9 )
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="Level"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level/StaticBody2D2"]
 position = Vector2( 1552, 272 )
-shape = SubResource( 2 )
+shape = SubResource( 10 )
 
 [node name="EnemySpawner" parent="." instance=ExtResource( 14 )]
 position = Vector2( 296, 432 )
