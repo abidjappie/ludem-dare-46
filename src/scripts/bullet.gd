@@ -12,3 +12,8 @@ func _ready():
 
 func _process(delta):
 	translate(velocity * delta)
+
+
+
+func _on_bullet_area_entered(area):
+	queue_free()

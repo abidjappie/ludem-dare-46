@@ -4,7 +4,7 @@ var health
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	health = 3
+	health = 4
 
 func _process(delta):
 	if (health < 1):
@@ -15,15 +15,15 @@ func _process(delta):
 func _on_Area2D_area_entered(area):
 	if (area.get_name()=='bullet'):
 		health -=1 
-		if area.position.x < position.x:
+		if area.velocity.x > 0:
 			if $AnimatedSprite.animation == "Idle":
 				$AnimatedSprite.play("HitLeft")
-				$AnimatedSprite.speed_scale = 2;
+				$AnimatedSprite.speed_scale = 3;
 				yield($AnimatedSprite, "animation_finished")
 				$AnimatedSprite.play("Idle")
 		else:
 			if $AnimatedSprite.animation == "Idle":
 				$AnimatedSprite.play("HitRight")
-				$AnimatedSprite.speed_scale = 2;
+				$AnimatedSprite.speed_scale = 3;
 				yield($AnimatedSprite, "animation_finished")
 				$AnimatedSprite.play("Idle")
