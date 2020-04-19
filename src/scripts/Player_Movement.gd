@@ -3,7 +3,10 @@ extends KinematicBody2D
 const WALK_SPEED = 100
 const JUMP_SPEED = 270
 const GRAVITY = 650
+const BULLET_SPEED = 400
+const BULLET_SPAWN_OFFSET = 16
 
+const scn_bullet = preload("res://src/scenes/bullet.tscn")
 # the direction the player is looking
 var look_direction = Vector2(1,0)
 
@@ -16,6 +19,16 @@ func ready():
 	
 func shoot():
 	if Input.is_action_just_pressed("shoot"):
+		var bullet = scn_bullet.instance()
+		bullet.position = get_node(".").position
+		bullet.position.y -= 4
+		if $body.flip_h:
+			bullet.position.x -= BULLET_SPAWN_OFFSET
+			bullet.velocity.x = -BULLET_SPEED
+		else:
+			bullet.position.x += BULLET_SPAWN_OFFSET
+			bullet.velocity.x = BULLET_SPEED
+		$'..'.add_child(bullet)
 		if $armFront.visible:
 			$armFront.play("Fire")
 			yield($armFront, "animation_finished")
@@ -38,7 +51,10 @@ func _process(_delta):
 		$body.set_offset(Vector2(6, 0))
 		$armFront.show()
 		$armBack.hide()
-		$body.play("Walk")
+		if is_on_floor():
+			$body.play("Walk")
+		else:
+			$body.play("Jump")
 	elif Input.is_action_pressed("left"):
 		$body.speed_scale = 2
 		$body.flip_h = true
@@ -47,7 +63,10 @@ func _process(_delta):
 		$armFront.hide()
 		$armBack.show()
 		$armBack.flip_h = true
-		$body.play("Walk")
+		if is_on_floor():
+			$body.play("Walk")
+		else:
+			$body.play("Jump")
 	elif Input.is_action_just_pressed("jump"):
 		$body.speed_scale = 1
 		$body.play("Jump")
