@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://src/scenes/Enemy_KinematicBody2D2.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/scenes/Pet_KinematicBody2D.tscn" type="PackedScene" id=2]
@@ -8,6 +8,8 @@
 [ext_resource path="res://proj/bg1-frontlayer.png" type="Texture" id=6]
 [ext_resource path="res://proj/bg1.png" type="Texture" id=7]
 [ext_resource path="res://proj/bg1-frontlayer2.png" type="Texture" id=8]
+[ext_resource path="res://src/scenes/DestructibleWall.tscn" type="PackedScene" id=9]
+[ext_resource path="res://src/scenes/Enemy_IFV.tscn" type="PackedScene" id=10]
 
 [sub_resource type="SegmentShape2D" id=1]
 a = Vector2( -0.235275, -50.458 )
@@ -53,3 +55,170 @@ texture = ExtResource( 6 )
 
 [node name="background_frontlayer2" type="Sprite" parent="ParallaxBackground"]
 texture = ExtResource( 8 )
+
+[node name="3x2DW" type="Node2D" parent="."]
+position = Vector2( 392, 656 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="DestructibleWall" parent="3x2DW" instance=ExtResource( 9 )]
+
+[node name="DestructibleWall2" parent="3x2DW" instance=ExtResource( 9 )]
+offset = Vector2( 16, 0 )
+
+[node name="DestructibleWall3" parent="3x2DW" instance=ExtResource( 9 )]
+offset = Vector2( 32, 0 )
+
+[node name="DestructibleWall4" parent="3x2DW" instance=ExtResource( 9 )]
+offset = Vector2( 0, 16 )
+
+[node name="DestructibleWall5" parent="3x2DW" instance=ExtResource( 9 )]
+offset = Vector2( 16, 16 )
+
+[node name="DestructibleWall6" parent="3x2DW" instance=ExtResource( 9 )]
+offset = Vector2( 32, 16 )
+
+[node name="3x2DW2" type="Node2D" parent="."]
+position = Vector2( 392, 688 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="DestructibleWall" parent="3x2DW2" instance=ExtResource( 9 )]
+
+[node name="DestructibleWall2" parent="3x2DW2" instance=ExtResource( 9 )]
+offset = Vector2( 16, 0 )
+
+[node name="DestructibleWall3" parent="3x2DW2" instance=ExtResource( 9 )]
+offset = Vector2( 32, 0 )
+
+[node name="DestructibleWall4" parent="3x2DW2" instance=ExtResource( 9 )]
+offset = Vector2( 0, 16 )
+
+[node name="DestructibleWall5" parent="3x2DW2" instance=ExtResource( 9 )]
+offset = Vector2( 16, 16 )
+
+[node name="DestructibleWall6" parent="3x2DW2" instance=ExtResource( 9 )]
+offset = Vector2( 32, 16 )
+
+[node name="3x2DW3" type="Node2D" parent="."]
+position = Vector2( 1216, 768 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="DestructibleWall" parent="3x2DW3" instance=ExtResource( 9 )]
+
+[node name="DestructibleWall2" parent="3x2DW3" instance=ExtResource( 9 )]
+offset = Vector2( 16, 0 )
+
+[node name="DestructibleWall3" parent="3x2DW3" instance=ExtResource( 9 )]
+offset = Vector2( 32, 0 )
+
+[node name="DestructibleWall4" parent="3x2DW3" instance=ExtResource( 9 )]
+offset = Vector2( 0, 16 )
+
+[node name="DestructibleWall5" parent="3x2DW3" instance=ExtResource( 9 )]
+offset = Vector2( 16, 16 )
+
+[node name="DestructibleWall6" parent="3x2DW3" instance=ExtResource( 9 )]
+offset = Vector2( 32, 16 )
+
+[node name="3x2DW4" type="Node2D" parent="."]
+position = Vector2( 1216, 736 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="DestructibleWall" parent="3x2DW4" instance=ExtResource( 9 )]
+
+[node name="DestructibleWall2" parent="3x2DW4" instance=ExtResource( 9 )]
+offset = Vector2( 16, 0 )
+
+[node name="DestructibleWall3" parent="3x2DW4" instance=ExtResource( 9 )]
+offset = Vector2( 32, 0 )
+
+[node name="DestructibleWall4" parent="3x2DW4" instance=ExtResource( 9 )]
+offset = Vector2( 0, 16 )
+
+[node name="DestructibleWall5" parent="3x2DW4" instance=ExtResource( 9 )]
+offset = Vector2( 16, 16 )
+
+[node name="DestructibleWall6" parent="3x2DW4" instance=ExtResource( 9 )]
+offset = Vector2( 32, 16 )
+
+[node name="3x2DW5" type="Node2D" parent="."]
+position = Vector2( 768, 768 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="DestructibleWall" parent="3x2DW5" instance=ExtResource( 9 )]
+
+[node name="DestructibleWall2" parent="3x2DW5" instance=ExtResource( 9 )]
+offset = Vector2( 16, 0 )
+
+[node name="DestructibleWall3" parent="3x2DW5" instance=ExtResource( 9 )]
+offset = Vector2( 32, 0 )
+
+[node name="DestructibleWall4" parent="3x2DW5" instance=ExtResource( 9 )]
+offset = Vector2( 0, 16 )
+
+[node name="DestructibleWall5" parent="3x2DW5" instance=ExtResource( 9 )]
+offset = Vector2( 16, 16 )
+
+[node name="DestructibleWall6" parent="3x2DW5" instance=ExtResource( 9 )]
+offset = Vector2( 32, 16 )
+
+[node name="DestructibleWall7" parent="3x2DW5" instance=ExtResource( 9 )]
+offset = Vector2( 32, 16 )
+
+[node name="3x2DW6" type="Node2D" parent="."]
+position = Vector2( 768, 736 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="DestructibleWall" parent="3x2DW6" instance=ExtResource( 9 )]
+
+[node name="DestructibleWall2" parent="3x2DW6" instance=ExtResource( 9 )]
+offset = Vector2( 16, 0 )
+
+[node name="DestructibleWall3" parent="3x2DW6" instance=ExtResource( 9 )]
+offset = Vector2( 32, 0 )
+
+[node name="DestructibleWall4" parent="3x2DW6" instance=ExtResource( 9 )]
+offset = Vector2( 0, 16 )
+
+[node name="DestructibleWall5" parent="3x2DW6" instance=ExtResource( 9 )]
+offset = Vector2( 16, 16 )
+
+[node name="DestructibleWall6" parent="3x2DW6" instance=ExtResource( 9 )]
+offset = Vector2( 32, 16 )
+
+[node name="3x2DW7" type="Node2D" parent="."]
+position = Vector2( 1168, 768 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="DestructibleWall" parent="3x2DW7" instance=ExtResource( 9 )]
+
+[node name="DestructibleWall2" parent="3x2DW7" instance=ExtResource( 9 )]
+offset = Vector2( 16, 0 )
+
+[node name="DestructibleWall3" parent="3x2DW7" instance=ExtResource( 9 )]
+offset = Vector2( 32, 0 )
+
+[node name="DestructibleWall4" parent="3x2DW7" instance=ExtResource( 9 )]
+offset = Vector2( 0, 16 )
+
+[node name="DestructibleWall5" parent="3x2DW7" instance=ExtResource( 9 )]
+offset = Vector2( 16, 16 )
+
+[node name="DestructibleWall6" parent="3x2DW7" instance=ExtResource( 9 )]
+offset = Vector2( 32, 16 )
+
+[node name="EnemyIFV_KB2D" parent="." instance=ExtResource( 10 )]
+position = Vector2( 592, 376 )
