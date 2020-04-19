@@ -1,6 +1,7 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://src/assets/Pet.png" type="Texture" id=1]
+[ext_resource path="res://src/scripts/pet/PetController.gd" type="Script" id=2]
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 1 )
@@ -40,10 +41,11 @@ radius = 9.30332
 [node name="Pet_KinematicBody2D" type="KinematicBody2D"]
 position = Vector2( 60, 400 )
 z_index = 2
+script = ExtResource( 2 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 7 )
-frame = 3
+frame = 4
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
