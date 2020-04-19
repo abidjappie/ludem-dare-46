@@ -5,10 +5,15 @@ const WALK_MAX_SPEED = 150
 const STOP_FORCE = 800
 const JUMP_SPEED = 400
 const GRAVITY = 700
+const BULLET_SPEED = 400
 
 var animation = ['Idle', 'Running', 'Fire', 'Death']
 var velocity = Vector2()
 var player
+
+var shooting = false
+
+const scn_bullet = preload("res://src/scenes/bullet.tscn")
 
 func _ready():
 	player = get_node("../Player_KinematicBody2D")
@@ -43,9 +48,14 @@ func _physics_process(delta):
 			$AnimatedSprite.flip_h = true
 			$AnimatedSprite.set_offset(Vector2(-3, 0))
 		velocity.x = 0
+		if ($AnimatedSprite.get_frame() == 1 and !shooting):
+			shoot()
+		elif ($AnimatedSprite.get_frame() == 0):
+			shooting = false
 		if ($AnimatedSprite.animation != "Fire"):
 				$AnimatedSprite.animation = "Fire"
 				$AnimatedSprite.play()
+				$AnimatedSprite.set_speed_scale(0.75)
 	else:
 		velocity.x = 0
 		$AnimatedSprite.animation = "Idle"
@@ -61,3 +71,14 @@ func _physics_process(delta):
 	
 	position += velocity * delta
 
+func shoot():
+	shooting = true
+	var bullet = scn_bullet.instance()
+	bullet.get_node("AnimatedSprite").animation = "bullet"
+	bullet.position = get_node(".").position
+	bullet.position.y -= 4
+	if $AnimatedSprite.flip_h:
+		bullet.velocity.x = -BULLET_SPEED
+	else:
+		bullet.velocity.x = BULLET_SPEED
+	$'..'.add_child(bullet)
