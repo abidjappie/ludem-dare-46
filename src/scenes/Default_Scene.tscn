@@ -103,7 +103,7 @@ offset = Vector2( 16, 16 )
 offset = Vector2( 32, 16 )
 
 [node name="3x2DW3" type="Node2D" parent="."]
-position = Vector2( 1216, 768 )
+position = Vector2( 1240, 768 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -198,7 +198,7 @@ offset = Vector2( 16, 16 )
 offset = Vector2( 32, 16 )
 
 [node name="3x2DW7" type="Node2D" parent="."]
-position = Vector2( 1168, 768 )
+position = Vector2( 1192, 768 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -218,6 +218,52 @@ offset = Vector2( 0, 16 )
 offset = Vector2( 16, 16 )
 
 [node name="DestructibleWall6" parent="3x2DW7" instance=ExtResource( 9 )]
+offset = Vector2( 32, 16 )
+
+[node name="3x2DW8" type="Node2D" parent="."]
+position = Vector2( 1320, 664 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="DestructibleWall" parent="3x2DW8" instance=ExtResource( 9 )]
+
+[node name="DestructibleWall2" parent="3x2DW8" instance=ExtResource( 9 )]
+offset = Vector2( 16, 0 )
+
+[node name="DestructibleWall3" parent="3x2DW8" instance=ExtResource( 9 )]
+offset = Vector2( 32, 0 )
+
+[node name="DestructibleWall4" parent="3x2DW8" instance=ExtResource( 9 )]
+offset = Vector2( 0, 16 )
+
+[node name="DestructibleWall5" parent="3x2DW8" instance=ExtResource( 9 )]
+offset = Vector2( 16, 16 )
+
+[node name="DestructibleWall6" parent="3x2DW8" instance=ExtResource( 9 )]
+offset = Vector2( 32, 16 )
+
+[node name="3x2DW9" type="Node2D" parent="."]
+position = Vector2( 1336, 632 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="DestructibleWall" parent="3x2DW9" instance=ExtResource( 9 )]
+
+[node name="DestructibleWall2" parent="3x2DW9" instance=ExtResource( 9 )]
+offset = Vector2( 16, 0 )
+
+[node name="DestructibleWall3" parent="3x2DW9" instance=ExtResource( 9 )]
+offset = Vector2( 32, 0 )
+
+[node name="DestructibleWall4" parent="3x2DW9" instance=ExtResource( 9 )]
+offset = Vector2( 0, 16 )
+
+[node name="DestructibleWall5" parent="3x2DW9" instance=ExtResource( 9 )]
+offset = Vector2( 16, 16 )
+
+[node name="DestructibleWall6" parent="3x2DW9" instance=ExtResource( 9 )]
 offset = Vector2( 32, 16 )
 
 [node name="EnemyIFV_KB2D" parent="." instance=ExtResource( 10 )]
