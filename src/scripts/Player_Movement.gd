@@ -19,6 +19,7 @@ func ready():
 	
 func shoot():
 	if Input.is_action_just_pressed("shoot"):
+		$shoot_audio.play()
 		var bullet = scn_bullet.instance()
 		bullet.position = get_node(".").position
 		bullet.position.y -= 2
@@ -41,6 +42,7 @@ func shoot():
 			$armBack.play("Return")
 			yield($armBack, "animation_finished")
 			$armBack.play("idle")
+		$shoot_audio.stop()
 
 # play animations
 func _process(_delta):
@@ -70,6 +72,7 @@ func _process(_delta):
 	elif Input.is_action_just_pressed("jump"):
 		$body.speed_scale = 1
 		$body.play("Jump")
+		$jump_audio.play()
 	elif is_on_floor():
 		$body.speed_scale = 1
 		$body.play("idle")
