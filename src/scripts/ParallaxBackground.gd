@@ -15,7 +15,7 @@ func _ready():
 func _process(_delta):
 	# X movement 16 pixels
 	# Y movement 30 pixels
-	$background.offset.x = 8-round(camera.get_camera_screen_center().x/84) 
+	$background.offset.x = 8-round(camera.get_camera_screen_center().x/96) 
 	$background.offset.y = round(camera.get_camera_screen_center().y/27.2)
 	$background.offset.x = clamp($background.offset.x, -8, 8)
 	$background.offset.y = clamp($background.offset.y, 0, 30)

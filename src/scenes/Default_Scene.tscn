@@ -39,7 +39,7 @@ shape = SubResource( 1 )
 [node name="StaticBody2D2" type="StaticBody2D" parent="Level"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level/StaticBody2D2"]
-position = Vector2( 1344, 272 )
+position = Vector2( 1552, 272 )
 shape = SubResource( 2 )
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]

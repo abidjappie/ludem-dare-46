@@ -22,59 +22,59 @@ region = Rect2( 0, 48, 32, 24 )
 
 [sub_resource type="AtlasTexture" id=5]
 atlas = ExtResource( 3 )
-region = Rect2( 0, 168, 32, 24 )
+region = Rect2( 0, 72, 32, 24 )
 
 [sub_resource type="AtlasTexture" id=6]
 atlas = ExtResource( 3 )
-region = Rect2( 0, 192, 32, 24 )
+region = Rect2( 0, 96, 32, 24 )
 
 [sub_resource type="AtlasTexture" id=7]
 atlas = ExtResource( 3 )
-region = Rect2( 0, 216, 32, 24 )
+region = Rect2( 0, 120, 32, 24 )
 
 [sub_resource type="AtlasTexture" id=8]
 atlas = ExtResource( 3 )
-region = Rect2( 0, 240, 32, 24 )
+region = Rect2( 0, 144, 32, 24 )
 
 [sub_resource type="AtlasTexture" id=9]
 atlas = ExtResource( 3 )
-region = Rect2( 0, 264, 32, 24 )
+region = Rect2( 0, 168, 32, 24 )
 
 [sub_resource type="AtlasTexture" id=10]
 atlas = ExtResource( 3 )
-region = Rect2( 0, 288, 32, 24 )
+region = Rect2( 0, 192, 32, 24 )
 
 [sub_resource type="AtlasTexture" id=11]
 atlas = ExtResource( 3 )
-region = Rect2( 0, 312, 32, 24 )
+region = Rect2( 0, 216, 32, 24 )
 
 [sub_resource type="AtlasTexture" id=12]
 atlas = ExtResource( 3 )
-region = Rect2( 0, 336, 32, 24 )
+region = Rect2( 0, 240, 32, 24 )
 
 [sub_resource type="AtlasTexture" id=13]
 atlas = ExtResource( 3 )
-region = Rect2( 0, 360, 32, 24 )
+region = Rect2( 0, 264, 32, 24 )
 
 [sub_resource type="AtlasTexture" id=14]
 atlas = ExtResource( 3 )
-region = Rect2( 0, 384, 32, 24 )
+region = Rect2( 0, 288, 32, 24 )
 
 [sub_resource type="AtlasTexture" id=15]
 atlas = ExtResource( 3 )
-region = Rect2( 0, 72, 32, 24 )
+region = Rect2( 0, 312, 32, 24 )
 
 [sub_resource type="AtlasTexture" id=16]
 atlas = ExtResource( 3 )
-region = Rect2( 0, 96, 32, 24 )
+region = Rect2( 0, 336, 32, 24 )
 
 [sub_resource type="AtlasTexture" id=17]
 atlas = ExtResource( 3 )
-region = Rect2( 0, 120, 32, 24 )
+region = Rect2( 0, 360, 32, 24 )
 
 [sub_resource type="AtlasTexture" id=18]
 atlas = ExtResource( 3 )
-region = Rect2( 0, 144, 32, 24 )
+region = Rect2( 0, 384, 32, 24 )
 
 [sub_resource type="SpriteFrames" id=19]
 animations = [ {
@@ -83,14 +83,14 @@ animations = [ {
 "name": "idle",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ) ],
-"loop": true,
-"name": "Walk",
-"speed": 5.0
-}, {
-"frames": [ SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ) ],
+"frames": [ SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ) ],
 "loop": true,
 "name": "Jump",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ) ],
+"loop": true,
+"name": "Walk",
 "speed": 5.0
 } ]
 
@@ -205,8 +205,8 @@ material = SubResource( 1 )
 current = true
 limit_left = 0
 limit_top = 0
-limit_right = 1344
-limit_bottom = 1056
+limit_right = 1536
+limit_bottom = 1088
 limit_smoothed = true
 drag_margin_h_enabled = true
 drag_margin_v_enabled = true
