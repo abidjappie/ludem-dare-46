@@ -38,7 +38,10 @@ func _process(_delta):
 		$body.set_offset(Vector2(6, 0))
 		$armFront.show()
 		$armBack.hide()
-		$body.play("Walk")
+		if is_on_floor():
+			$body.play("Walk")
+		else:
+			$body.play("Jump")
 	elif Input.is_action_pressed("left"):
 		$body.speed_scale = 2
 		$body.flip_h = true
@@ -47,7 +50,10 @@ func _process(_delta):
 		$armFront.hide()
 		$armBack.show()
 		$armBack.flip_h = true
-		$body.play("Walk")
+		if is_on_floor():
+			$body.play("Walk")
+		else:
+			$body.play("Jump")
 	elif Input.is_action_just_pressed("jump"):
 		$body.speed_scale = 1
 		$body.play("Jump")
