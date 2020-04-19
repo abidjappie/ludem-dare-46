@@ -20,7 +20,7 @@ func _process(delta):
 	else:
 		if (children != []):
 			#print(nearest_child())
-			if nearest_child() > 96:
+			if nearest_child() > 96 or nearest_child()== -1:
 				spawned = false
 
 func nearest_child():
