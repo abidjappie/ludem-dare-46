@@ -12,7 +12,7 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	# X movement 16 pixels
 	# Y movement 30 pixels
 	$background.offset.x = 8-round(camera.get_camera_screen_center().x/84) 
