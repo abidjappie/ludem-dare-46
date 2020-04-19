@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://src/scenes/Enemy_KinematicBody2D2.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/scenes/Pet_KinematicBody2D.tscn" type="PackedScene" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://proj/bg1-frontlayer.png" type="Texture" id=6]
 [ext_resource path="res://proj/bg1.png" type="Texture" id=7]
 [ext_resource path="res://proj/bg1-frontlayer2.png" type="Texture" id=8]
+[ext_resource path="res://src/scripts/pet/PetController.gd" type="Script" id=9]
 
 [sub_resource type="SegmentShape2D" id=1]
 a = Vector2( -0.235275, -50.458 )
@@ -20,6 +21,7 @@ b = Vector2( 0, 520 )
 [node name="Node2D" type="Node2D"]
 
 [node name="Pet_KinematicBody2D" parent="." instance=ExtResource( 2 )]
+script = ExtResource( 9 )
 
 [node name="Player_KinematicBody2D" parent="." instance=ExtResource( 3 )]
 
