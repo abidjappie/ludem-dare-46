@@ -21,6 +21,7 @@ func shoot():
 	if Input.is_action_just_pressed("shoot"):
 		$shoot_audio.play()
 		var bullet = scn_bullet.instance()
+		bullet.from_who = "player"
 		bullet.position = get_node(".").position
 		bullet.position.y -= 2
 		if $body.flip_h:
