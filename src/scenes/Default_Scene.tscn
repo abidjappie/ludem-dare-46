@@ -25,37 +25,30 @@
 [ext_resource path="res://src/scenes/GameState_Controller.gd" type="Script" id=23]
 
 [sub_resource type="AtlasTexture" id=1]
-flags = 4
 atlas = ExtResource( 19 )
 region = Rect2( 0, 0, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=2]
-flags = 4
 atlas = ExtResource( 19 )
 region = Rect2( 32, 0, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=3]
-flags = 4
 atlas = ExtResource( 19 )
 region = Rect2( 64, 0, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=4]
-flags = 4
 atlas = ExtResource( 19 )
 region = Rect2( 96, 0, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=5]
-flags = 4
 atlas = ExtResource( 19 )
 region = Rect2( 128, 0, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=6]
-flags = 4
 atlas = ExtResource( 19 )
 region = Rect2( 160, 0, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=7]
-flags = 4
 atlas = ExtResource( 19 )
 region = Rect2( 192, 0, 32, 32 )
 
@@ -98,7 +91,7 @@ transform = Transform2D( 0.75, 0, 0, 0.75, 64, 20 )
 z_index = 2
 frames = SubResource( 8 )
 animation = "Idle"
-frame = 1
+frame = 5
 playing = true
 offset = Vector2( -56, 0 )
 
