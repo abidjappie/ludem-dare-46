@@ -25,7 +25,7 @@ func shoot():
 		var bullet = scn_bullet.instance()
 		bullet.from_who = "player"
 		bullet.position = get_node(".").position
-		bullet.position.y -= 2
+		bullet.position.y -= 5
 		if $body.flip_h:
 			bullet.position.x -= BULLET_SPAWN_OFFSET
 			bullet.velocity.x = -BULLET_SPEED
@@ -106,7 +106,7 @@ func die():
 
 func _on_damage_area_entered(area):
 	if (area.get_name() == "SpikeArea2D"):
-		PLAYER_HEALTH -= 2
+		PLAYER_HEALTH -= 10 # instant death
 	if (area.get_name() == "bullet"):
 		PLAYER_HEALTH -= 1
 	#print("Player health: ",PLAYER_HEALTH)
