@@ -131,3 +131,6 @@ func _on_damage_area_entered(area):
 		root.PLAYER_HEALTH -= 1
 	if (area.get_name() == "grenade"):
 		root.PLAYER_HEALTH -= 5
+		
+func take_damage(damage):
+	root.PLAYER_HEALTH -= damage
