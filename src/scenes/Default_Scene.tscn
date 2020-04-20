@@ -203,7 +203,7 @@ transform = Transform2D( 0.75, 0, 0, 0.75, 64, 20 )
 z_index = 2
 frames = SubResource( 14 )
 animation = "Idle"
-frame = 4
+frame = 5
 playing = true
 offset = Vector2( -56, 0 )
 
