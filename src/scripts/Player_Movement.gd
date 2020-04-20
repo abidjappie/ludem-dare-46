@@ -100,7 +100,7 @@ func _physics_process(delta):
 	velocity = move_and_slide_with_snap(velocity, Vector2.DOWN, Vector2.UP)
 	
 	# check if player is airborne
-	if is_on_floor() and Input.is_action_just_pressed('jump'):
+	if is_on_floor() and Input.is_action_just_pressed('jump') and !dying:
 		velocity.y = -JUMP_SPEED
 
 
