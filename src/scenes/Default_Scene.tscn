@@ -26,23 +26,25 @@
 [ext_resource path="res://src/assets/GameOver.png" type="Texture" id=25]
 [ext_resource path="res://src/scripts/Screens.gd" type="Script" id=26]
 
-[sub_resource type="AtlasTexture" id=11]
+[sub_resource type="AtlasTexture" id=1]
+flags = 4
 atlas = ExtResource( 25 )
 region = Rect2( 0, 0, 320, 180 )
 
-[sub_resource type="AtlasTexture" id=12]
+[sub_resource type="AtlasTexture" id=2]
+flags = 4
 atlas = ExtResource( 25 )
 region = Rect2( 0, 180, 320, 180 )
 
-[sub_resource type="SpriteFrames" id=13]
+[sub_resource type="SpriteFrames" id=3]
 animations = [ {
-"frames": [ SubResource( 11 ), SubResource( 12 ) ],
+"frames": [ SubResource( 1 ), SubResource( 2 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
 } ]
 
-[sub_resource type="Animation" id=14]
+[sub_resource type="Animation" id=4]
 resource_name = "FadeIn"
 tracks/0/type = "value"
 tracks/0/path = NodePath("ColorRect:color")
@@ -69,7 +71,7 @@ tracks/1/keys = {
 "values": [ Color( 0, 0, 0, 0 ), Color( 1, 1, 1, 1 ) ]
 }
 
-[sub_resource type="Animation" id=15]
+[sub_resource type="Animation" id=5]
 resource_name = "FadeInRest"
 tracks/0/type = "value"
 tracks/0/path = NodePath("ColorRect:color")
@@ -96,7 +98,7 @@ tracks/1/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 
-[sub_resource type="Animation" id=16]
+[sub_resource type="Animation" id=6]
 resource_name = "FadeOut"
 tracks/0/type = "value"
 tracks/0/path = NodePath("ColorRect:color")
@@ -111,52 +113,52 @@ tracks/0/keys = {
 "values": [ Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 0 ) ]
 }
 
-[sub_resource type="AtlasTexture" id=1]
+[sub_resource type="AtlasTexture" id=7]
 atlas = ExtResource( 19 )
 region = Rect2( 0, 0, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=2]
+[sub_resource type="AtlasTexture" id=8]
 atlas = ExtResource( 19 )
 region = Rect2( 32, 0, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=3]
+[sub_resource type="AtlasTexture" id=9]
 atlas = ExtResource( 19 )
 region = Rect2( 64, 0, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=4]
+[sub_resource type="AtlasTexture" id=10]
 atlas = ExtResource( 19 )
 region = Rect2( 96, 0, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=5]
+[sub_resource type="AtlasTexture" id=11]
 atlas = ExtResource( 19 )
 region = Rect2( 128, 0, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=6]
+[sub_resource type="AtlasTexture" id=12]
 atlas = ExtResource( 19 )
 region = Rect2( 160, 0, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=7]
+[sub_resource type="AtlasTexture" id=13]
 atlas = ExtResource( 19 )
 region = Rect2( 192, 0, 32, 32 )
 
-[sub_resource type="SpriteFrames" id=8]
+[sub_resource type="SpriteFrames" id=14]
 animations = [ {
-"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ) ],
+"frames": [ SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ) ],
 "loop": true,
 "name": "Idle",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 7 ) ],
+"frames": [ SubResource( 13 ) ],
 "loop": true,
 "name": "Damage",
 "speed": 5.0
 } ]
 
-[sub_resource type="SegmentShape2D" id=9]
+[sub_resource type="SegmentShape2D" id=15]
 a = Vector2( -0.235275, -50.458 )
 b = Vector2( 1.27023, 517.434 )
 
-[sub_resource type="SegmentShape2D" id=10]
+[sub_resource type="SegmentShape2D" id=16]
 a = Vector2( -1.25256, -86.2435 )
 b = Vector2( 0, 520 )
 
@@ -175,7 +177,7 @@ script = ExtResource( 26 )
 [node name="GameoverScreen" type="AnimatedSprite" parent="Screens"]
 scale = Vector2( 0.5, 0.5 )
 z_index = 1
-frames = SubResource( 13 )
+frames = SubResource( 3 )
 offset = Vector2( 340, 180 )
 
 [node name="ColorRect" type="ColorRect" parent="Screens"]
@@ -187,9 +189,9 @@ __meta__ = {
 }
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Screens"]
-anims/FadeIn = SubResource( 14 )
-anims/FadeInRest = SubResource( 15 )
-anims/FadeOut = SubResource( 16 )
+anims/FadeIn = SubResource( 4 )
+anims/FadeInRest = SubResource( 5 )
+anims/FadeOut = SubResource( 6 )
 
 [node name="HUD" type="ParallaxBackground" parent="."]
 layer = 100
@@ -199,9 +201,9 @@ transform = Transform2D( 0.75, 0, 0, 0.75, 64, 20 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="HUD"]
 z_index = 2
-frames = SubResource( 8 )
+frames = SubResource( 14 )
 animation = "Idle"
-frame = 1
+frame = 5
 playing = true
 offset = Vector2( -56, 0 )
 
@@ -340,13 +342,13 @@ position = Vector2( 376, 1000 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level/StaticBody2D"]
 position = Vector2( -1.27023, 282.566 )
-shape = SubResource( 9 )
+shape = SubResource( 15 )
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="Level"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level/StaticBody2D2"]
 position = Vector2( 1552, 272 )
-shape = SubResource( 10 )
+shape = SubResource( 16 )
 
 [node name="EnemySpawner" parent="." instance=ExtResource( 14 )]
 position = Vector2( 296, 432 )

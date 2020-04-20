@@ -1,13 +1,16 @@
 extends Node2D
 
 onready var player = get_node("Player_KinematicBody2D")
+onready var pet = get_node("Pet_Node")
 onready var objectives = get_node("Objectives")
 onready var hp_bar = get_node("HUD/TextureProgress")
 onready var screens = get_node("Screens")
 
+var PLAYER_HEALTH = 10
+
 func _process(_delta):
-	hp_bar.value = player.PLAYER_HEALTH
-	if player.PLAYER_HEALTH <= 0 and !player.dying:
+	hp_bar.value = PLAYER_HEALTH
+	if PLAYER_HEALTH <= 0 and !player.dying:
 		# warning-ignore:return_value_discarded
 		player.die()
 		yield(player, "death_signal")
@@ -17,4 +20,3 @@ func _process(_delta):
 	if (objectives.objective_list.size()==0): # all checkpoints reached
 		print("All checkpoints reached! PLAYER WINS!")
 		get_tree().quit() # exit game
-
