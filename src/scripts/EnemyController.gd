@@ -17,6 +17,7 @@ var is_alive
 var shooting = false
 
 const scn_bullet = preload("res://src/scenes/bullet.tscn")
+onready var collision = get_node("CollisionShape2D")
 
 func _ready():
 	player = get_node("../Player_KinematicBody2D")
@@ -26,7 +27,6 @@ func _physics_process(delta):
 	if is_alive:
 		var distance_from_player = position.distance_to(player.position)
 		var height_from_player = Vector2(0, position.y).distance_to(Vector2(0, player.position.y))
-		
 		
 		# If player is within range
 		if (distance_from_player < VISION && distance_from_player > RANGE):
@@ -90,10 +90,13 @@ func shoot():
 	else:
 		bullet.velocity.x = BULLET_SPEED
 	$'..'.add_child(bullet)
+	yield($AudioStreamPlayer2D, "finished")
+	$AudioStreamPlayer2D.stop()
 
 # kill this enemy
 func die():
 	is_alive = false
+	collision.set_deferred("disabled", true) # disable collision
 	$AnimatedSprite.speed_scale = 1
 	$AnimatedSprite.play("Death1")
 	yield($AnimatedSprite, "animation_finished")
