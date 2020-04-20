@@ -16,6 +16,7 @@ const scn_bullet = preload("res://src/scenes/bullet.tscn")
 var look_direction = Vector2(1,0)
 
 onready var root = get_node("../") # parent node (i.e Node2D)
+onready var death_audio = get_node("death_audio")
 
 var velocity = Vector2()
 
@@ -106,18 +107,19 @@ func _physics_process(delta):
 
 func die():
 	dying = true
-	print("Player died!")
 	$body.speed_scale = 2
 	$armFront.speed_scale = 2
 	$armBack.speed_scale = 2
 	$body.play("Death")
 	$armFront.play("Death")
 	$armBack.play("Death")
+	death_audio.play()
 	yield($body, "animation_finished")
 	emit_signal("death_signal")
 	$body.stop()
 	$armFront.stop()
 	$armBack.stop()
+	death_audio.stop()
 	$body.frame = 9
 	$armFront.frame = 9
 	$armBack.frame = 9

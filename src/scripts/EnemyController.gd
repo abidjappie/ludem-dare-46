@@ -79,6 +79,7 @@ func _physics_process(delta):
 		position += velocity * delta
 
 func shoot():
+	$AudioStreamPlayer2D.play()
 	var bullet = scn_bullet.instance()
 	bullet.from_who = get_name()
 	bullet.get_node("AnimatedSprite").animation = "bullet"

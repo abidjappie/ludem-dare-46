@@ -8,6 +8,9 @@ onready var screens = get_node("Screens")
 
 var PLAYER_HEALTH = 10
 
+func _ready():
+	pass # init here
+
 func _process(_delta):
 	hp_bar.value = PLAYER_HEALTH
 	if PLAYER_HEALTH <= 0 and !player.dying:
