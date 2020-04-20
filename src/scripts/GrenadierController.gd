@@ -19,8 +19,7 @@ func _ready():
 func _physics_process(delta):
 	if is_alive:
 		var distance_from_player = position.distance_to(player.position)
-		var height_from_player = Vector2(0, position.y).distance_to(Vector2(0, player.position.y))
-		
+		var _height_from_player = Vector2(0, position.y).distance_to(Vector2(0, player.position.y))
 		
 		# If player is within range
 		if (distance_from_player < 128 && distance_from_player > 64):

@@ -11,7 +11,7 @@ func _ready():
 	scene = get_node("..")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 
 	if $VisibilityNotifier2D.is_on_screen():
 		if !spawned:
