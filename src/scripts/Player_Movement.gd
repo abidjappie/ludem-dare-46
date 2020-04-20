@@ -102,6 +102,8 @@ func _physics_process(delta):
 func die():
 	print("Player died!")
 	$body.play("Death")
+	$armFront.play("Death")
+	$armBack.play("Death")
 	yield($body, "animation_finished")
 
 func _on_damage_area_entered(area):
