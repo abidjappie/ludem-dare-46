@@ -27,12 +27,10 @@
 [ext_resource path="res://src/scripts/Screens.gd" type="Script" id=26]
 
 [sub_resource type="AtlasTexture" id=1]
-flags = 4
 atlas = ExtResource( 25 )
 region = Rect2( 0, 0, 320, 180 )
 
 [sub_resource type="AtlasTexture" id=2]
-flags = 4
 atlas = ExtResource( 25 )
 region = Rect2( 0, 180, 320, 180 )
 
@@ -203,7 +201,7 @@ transform = Transform2D( 0.75, 0, 0, 0.75, 64, 20 )
 z_index = 2
 frames = SubResource( 14 )
 animation = "Idle"
-frame = 5
+frame = 3
 playing = true
 offset = Vector2( -56, 0 )
 
