@@ -75,7 +75,6 @@ script = ExtResource( 3 )
 position = Vector2( -2.8382, 4.92233 )
 z_index = 1
 frames = SubResource( 4 )
-animation = "Idle"
 offset = Vector2( -3, -11 )
 
 [node name="body" type="AnimatedSprite" parent="."]
