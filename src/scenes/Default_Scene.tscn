@@ -98,19 +98,25 @@ transform = Transform2D( 0.75, 0, 0, 0.75, 64, 20 )
 z_index = 2
 frames = SubResource( 8 )
 animation = "Idle"
-frame = 3
+frame = 1
 playing = true
 offset = Vector2( -56, 0 )
 
 [node name="Sprite" type="Sprite" parent="HUD"]
-z_index = 1
 texture = ExtResource( 20 )
 
-[node name="Sprite2" type="Sprite" parent="HUD"]
-position = Vector2( 20, -8 )
-scale = Vector2( 1, 0.35 )
-z_index = 3
-texture = ExtResource( 21 )
+[node name="TextureProgress" type="TextureProgress" parent="HUD"]
+margin_left = -30.0
+margin_top = -9.4
+margin_right = 70.0
+margin_bottom = -1.4
+rect_scale = Vector2( 1, 0.35 )
+max_value = 10.0
+value = 10.0
+texture_progress = ExtResource( 21 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 offset = Vector2( 160, 90 )
@@ -118,6 +124,7 @@ transform = Transform2D( 1, 0, 0, 1, 160, 90 )
 script = ExtResource( 4 )
 
 [node name="background" type="Sprite" parent="ParallaxBackground"]
+position = Vector2( 0, -2 )
 texture = ExtResource( 7 )
 
 [node name="background_frontlayer" type="Sprite" parent="ParallaxBackground"]
@@ -322,7 +329,9 @@ position = Vector2( -576, 528 )
 [node name="Objectives" type="Node2D" parent="."]
 script = ExtResource( 18 )
 
-[node name="Node2D" parent="Objectives" instance=ExtResource( 16 )]
+[node name="Node2D" parent="Objectives" groups=[
+"checkpoint",
+] instance=ExtResource( 16 )]
 position = Vector2( 1424, 952 )
 
 [node name="Node2D3" parent="Objectives" instance=ExtResource( 16 )]

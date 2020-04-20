@@ -6,8 +6,8 @@ const STOP_FORCE = 800
 const JUMP_SPEED = 400
 const GRAVITY = 700
 const BULLET_SPEED = 400
-const VISION = 128
-const RANGE = 96
+const VISION = 140
+const RANGE = 110
 
 var animation = ['Idle', 'Running', 'Fire', 'Death']
 var velocity = Vector2()
