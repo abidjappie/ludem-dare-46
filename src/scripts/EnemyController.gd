@@ -90,10 +90,19 @@ func shoot():
 		bullet.velocity.x = BULLET_SPEED
 	$'..'.add_child(bullet)
 
+# kill this enemy
+func die():
+	is_alive = false
+	$AnimatedSprite.speed_scale = 1
+	$AnimatedSprite.play("Death1")
+	yield($AnimatedSprite, "animation_finished")
+	queue_free()
+
 func _bullet_area_entered(area):
 	if (area.get_name() == "bullet" and area.from_who=="player"):
-		is_alive = false
-		$AnimatedSprite.speed_scale = 1
-		$AnimatedSprite.play("Death1")
-		yield($AnimatedSprite, "animation_finished")
-		queue_free()
+		die()
+
+# enemy enters spike area
+func _on_spike_area_entered(area):
+	if area.get_name() == "SpikeArea2D":
+		die()

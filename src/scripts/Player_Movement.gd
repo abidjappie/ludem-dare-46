@@ -6,6 +6,8 @@ const GRAVITY = 650
 const BULLET_SPEED = 400
 const BULLET_SPAWN_OFFSET = 16
 
+var PLAYER_HEALTH = 10
+
 const scn_bullet = preload("res://src/scenes/bullet.tscn")
 # the direction the player is looking
 var look_direction = Vector2(1,0)
@@ -47,6 +49,8 @@ func shoot():
 
 # play animations
 func _process(_delta):
+	if PLAYER_HEALTH <= 0:
+		die()
 	shoot()
 	if Input.is_action_pressed("right"):
 		$body.speed_scale = 2
@@ -95,4 +99,14 @@ func _physics_process(delta):
 	if is_on_floor() and Input.is_action_just_pressed('jump'):
 		velocity.y = -JUMP_SPEED
 
+func die():
+	print("Player died!")
+	$body.play("Death")
+	yield($body, "animation_finished")
 
+func _on_damage_area_entered(area):
+	if (area.get_name() == "SpikeArea2D"):
+		PLAYER_HEALTH -= 2
+	if (area.get_name() == "bullet"):
+		PLAYER_HEALTH -= 1
+	#print("Player health: ",PLAYER_HEALTH)
