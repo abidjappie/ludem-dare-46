@@ -22,4 +22,6 @@ func _process(_delta):
 		get_tree().reload_current_scene()
 	if (objectives.objective_list.size()==0): # all checkpoints reached
 		print("All checkpoints reached! PLAYER WINS!")
-		get_tree().quit() # exit game
+		screens.show_gameend(PLAYER_HEALTH==10)
+		yield(screens, "reboot_signal")
+		get_tree().reload_current_scene()
