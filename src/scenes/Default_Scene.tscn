@@ -98,6 +98,7 @@ transform = Transform2D( 0.75, 0, 0, 0.75, 64, 20 )
 z_index = 2
 frames = SubResource( 8 )
 animation = "Idle"
+frame = 1
 playing = true
 offset = Vector2( -56, 0 )
 
@@ -328,7 +329,9 @@ position = Vector2( -576, 528 )
 [node name="Objectives" type="Node2D" parent="."]
 script = ExtResource( 18 )
 
-[node name="Node2D" parent="Objectives" instance=ExtResource( 16 )]
+[node name="Node2D" parent="Objectives" groups=[
+"checkpoint",
+] instance=ExtResource( 16 )]
 position = Vector2( 1424, 952 )
 
 [node name="Node2D3" parent="Objectives" instance=ExtResource( 16 )]
