@@ -15,8 +15,6 @@ var seeking_objective = false
 var current_objective = null
 var target
 
-var CHECKPOINTS = {}
-
 onready var animateSprite = get_node("AnimatedSprite")
 onready var objectives = get_node("../Objectives")
 
@@ -78,9 +76,3 @@ func _physics_process(_delta):
 	velocity.x = clamp(velocity.x, -WALK_MAX_SPEED, WALK_MAX_SPEED)
 	velocity.y = clamp(velocity.y, -WALK_MAX_SPEED, WALK_MAX_SPEED)
 	position += velocity* _delta
-
-# pet reached checkpoint
-func _on_checkpoint_area_entered(area):
-	if "Node2D" in area.get_name(): # check if area is a checkpoint
-		CHECKPOINTS[area.get_name()] = true # ensures checkpoint only counted once
-	print(CHECKPOINTS)

@@ -1,5 +1,7 @@
 extends KinematicBody2D
 
+signal death_signal
+
 const WALK_SPEED = 100
 const JUMP_SPEED = 270
 const GRAVITY = 650
@@ -7,6 +9,8 @@ const BULLET_SPEED = 400
 const BULLET_SPAWN_OFFSET = 16
 
 var PLAYER_HEALTH = 10
+var dying = false
+var crouching = false
 
 const scn_bullet = preload("res://src/scenes/bullet.tscn")
 # the direction the player is looking
@@ -49,43 +53,42 @@ func shoot():
 
 # play animations
 func _process(_delta):
-	if PLAYER_HEALTH <= 0:
-		die()
-	shoot()
-	if Input.is_action_pressed("right"):
-		$body.speed_scale = 2
-		$body.flip_h = false
-		$body.set_offset(Vector2(6, 0))
-		$armFront.show()
-		$armBack.hide()
-		if is_on_floor():
-			$body.play("Walk")
-		else:
+	if (!dying):
+		shoot()
+		if Input.is_action_pressed("right"):
+			$body.speed_scale = 2
+			$body.flip_h = false
+			$body.set_offset(Vector2(6, 0))
+			$armFront.show()
+			$armBack.hide()
+			if is_on_floor():
+				$body.play("Walk")
+			else:
+				$body.play("Jump")
+		elif Input.is_action_pressed("left"):
+			$body.speed_scale = 2
+			$body.flip_h = true
+			$body.set_offset(Vector2(-6, 0))
+			$armBack.set_offset(Vector2(-10, 0))
+			$armFront.hide()
+			$armBack.show()
+			$armBack.flip_h = true
+			if is_on_floor():
+				$body.play("Walk")
+			else:
+				$body.play("Jump")
+		elif Input.is_action_just_pressed("jump"):
+			$body.speed_scale = 1
 			$body.play("Jump")
-	elif Input.is_action_pressed("left"):
-		$body.speed_scale = 2
-		$body.flip_h = true
-		$body.set_offset(Vector2(-6, 0))
-		$armBack.set_offset(Vector2(-10, 0))
-		$armFront.hide()
-		$armBack.show()
-		$armBack.flip_h = true
-		if is_on_floor():
-			$body.play("Walk")
-		else:
-			$body.play("Jump")
-	elif Input.is_action_just_pressed("jump"):
-		$body.speed_scale = 1
-		$body.play("Jump")
-		$jump_audio.play()
-	elif is_on_floor():
-		$body.speed_scale = 1
-		$body.play("idle")
+			$jump_audio.play()
+		elif is_on_floor():
+			$body.speed_scale = 1
+			$body.play("idle")
 
 func _physics_process(delta):
-	if Input.is_action_pressed("right"):
+	if Input.is_action_pressed("right") and !dying:
 		velocity.x = WALK_SPEED
-	elif Input.is_action_pressed("left"):
+	elif Input.is_action_pressed("left") and !dying:
 		velocity.x = -WALK_SPEED
 	else:
 		velocity.x = 0
@@ -99,12 +102,24 @@ func _physics_process(delta):
 	if is_on_floor() and Input.is_action_just_pressed('jump'):
 		velocity.y = -JUMP_SPEED
 
+
 func die():
+	dying = true
 	print("Player died!")
+	$body.speed_scale = 2
+	$armFront.speed_scale = 2
+	$armBack.speed_scale = 2
 	$body.play("Death")
 	$armFront.play("Death")
 	$armBack.play("Death")
 	yield($body, "animation_finished")
+	emit_signal("death_signal")
+	$body.stop()
+	$armFront.stop()
+	$armBack.stop()
+	$body.frame = 9
+	$armFront.frame = 9
+	$armBack.frame = 9
 
 func _on_damage_area_entered(area):
 	if (area.get_name() == "SpikeArea2D"):
