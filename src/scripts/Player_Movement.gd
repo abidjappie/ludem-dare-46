@@ -8,13 +8,14 @@ const GRAVITY = 650
 const BULLET_SPEED = 400
 const BULLET_SPAWN_OFFSET = 16
 
-var PLAYER_HEALTH = 10
 var dying = false
 var crouching = false
 
 const scn_bullet = preload("res://src/scenes/bullet.tscn")
 # the direction the player is looking
 var look_direction = Vector2(1,0)
+
+onready var root = get_node("../") # parent node (i.e Node2D)
 
 var velocity = Vector2()
 
@@ -123,7 +124,8 @@ func die():
 
 func _on_damage_area_entered(area):
 	if (area.get_name() == "SpikeArea2D"):
-		PLAYER_HEALTH -= 10 # instant death
+		root.PLAYER_HEALTH -= 10 # instant death
 	if (area.get_name() == "bullet"):
-		PLAYER_HEALTH -= 1
-	#print("Player health: ",PLAYER_HEALTH)
+		root.PLAYER_HEALTH -= 1
+	if (area.get_name() == "grenade"):
+		root.PLAYER_HEALTH -= 5
