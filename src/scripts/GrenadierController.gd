@@ -13,6 +13,8 @@ var player
 var is_alive
 var shooting = false
 
+onready var collision = get_node("CollisionShape2D")
+
 const scn_grenade = preload("res://src/scenes/grenade.tscn")
 
 func _ready():
@@ -62,7 +64,7 @@ func _physics_process(delta):
 			if is_alive:
 				$AnimatedSprite.animation = "Idle"
 			
-		if ($AnimatedSprite.animation == "Fire"):	
+		if ($AnimatedSprite.animation == "Fire"):
 			if ($AnimatedSprite.get_frame() == 1 and !shooting):
 				shooting = true
 				shoot()
@@ -94,5 +96,6 @@ func _on_bullet_entered(area):
 		is_alive = false
 		$AnimatedSprite.speed_scale = 1
 		$AnimatedSprite.play("Death")
+		collision.set_deferred("disabled", true) # disable collision
 		yield($AnimatedSprite, "animation_finished")
 		queue_free()
