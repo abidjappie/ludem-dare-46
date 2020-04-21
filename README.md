@@ -3,7 +3,7 @@
 Mumei is a 2D platformer with a sci-fi theme and shooter/survival elements.
 
 ## Instructions
-Play on Itch.io:
+Play on Itch.io: (HTML5 is pretty borked, not recommended)
   - Visit https://pie75.itch.io/mumei
   
 Download Windows 32 bit Zipped Executable:
