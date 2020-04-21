@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/short_nose.wav-22dd43cfd24be7f613f2dd8d159532f4.sample"
+
+[deps]
+
+source_file="res://src/sounds/short_nose.wav"
+dest_files=[ "res://.import/short_nose.wav-22dd43cfd24be7f613f2dd8d159532f4.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

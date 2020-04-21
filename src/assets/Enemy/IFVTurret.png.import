@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/bg1.jpg-47c4ab407297daf84a35d251af7aea85.stex"
+path="res://.import/IFVTurret.png-d99512b0bbfe3fa482bf9f00ae823f82.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://proj/bg1.jpg"
-dest_files=[ "res://.import/bg1.jpg-47c4ab407297daf84a35d251af7aea85.stex" ]
+source_file="res://src/assets/Enemy/IFVTurret.png"
+dest_files=[ "res://.import/IFVTurret.png-d99512b0bbfe3fa482bf9f00ae823f82.stex" ]
 
 [params]
 

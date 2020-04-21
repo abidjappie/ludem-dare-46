@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/bg1.jpg-47c4ab407297daf84a35d251af7aea85.stex"
+path="res://.import/HUDBackground.png-70dc9dab8d6ac1826ae4f2f48c373f9e.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://proj/bg1.jpg"
-dest_files=[ "res://.import/bg1.jpg-47c4ab407297daf84a35d251af7aea85.stex" ]
+source_file="res://src/assets/HUDBackground.png"
+dest_files=[ "res://.import/HUDBackground.png-70dc9dab8d6ac1826ae4f2f48c373f9e.stex" ]
 
 [params]
 

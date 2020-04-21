@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/bg1.jpg-47c4ab407297daf84a35d251af7aea85.stex"
+path="res://.import/RifleSoldier.png-d465a522bd0b6abd422b3f4e64d01b28.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://proj/bg1.jpg"
-dest_files=[ "res://.import/bg1.jpg-47c4ab407297daf84a35d251af7aea85.stex" ]
+source_file="res://src/assets/Enemy/RifleSoldier.png"
+dest_files=[ "res://.import/RifleSoldier.png-d465a522bd0b6abd422b3f4e64d01b28.stex" ]
 
 [params]
 

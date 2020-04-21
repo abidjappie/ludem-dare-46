@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/gun.ogg-a91487028bc833b54d07916e93deb643.oggstr"
+
+[deps]
+
+source_file="res://src/sounds/gun.ogg"
+dest_files=[ "res://.import/gun.ogg-a91487028bc833b54d07916e93deb643.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
