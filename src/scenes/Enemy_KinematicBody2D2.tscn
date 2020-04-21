@@ -128,6 +128,6 @@ shape = SubResource( 20 )
 stream = ExtResource( 3 )
 volume_db = -14.0
 pitch_scale = 0.7
-max_distance = 1000.0
-[connection signal="area_entered" from="Area2D" to="." method="_bullet_area_entered"]
+max_distance = 500.0
 [connection signal="area_entered" from="Area2D" to="." method="_on_spike_area_entered"]
+[connection signal="area_entered" from="Area2D" to="." method="_bullet_area_entered"]
