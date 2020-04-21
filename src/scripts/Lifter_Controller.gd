@@ -14,6 +14,7 @@ var health = 15
 var attacking = false
 var hit = false
 
+onready var death_audio = get_node("death_audio")
 onready var player = get_node("../Player_KinematicBody2D")
 
 func _ready():
@@ -78,9 +79,9 @@ func move_toward_player():
 # kill this enemy
 func die():
 	is_alive = false
-	$AnimatedSprite.speed_scale = 1
-	$AnimatedSprite.play("Death1")
-	yield($AnimatedSprite, "animation_finished")
+	death_audio.play()
+	yield(death_audio, "finished")
+	print("DIE")
 	queue_free()
 
 func _on_Area2D_area_entered(area):
