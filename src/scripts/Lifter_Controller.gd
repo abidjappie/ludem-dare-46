@@ -79,6 +79,8 @@ func move_toward_player():
 # kill this enemy
 func die():
 	is_alive = false
+	$AnimatedSprite.animation = "Idle"
+	$AnimatedSprite.stop()
 	death_audio.play()
 	yield(death_audio, "finished")
 	print("DIE")

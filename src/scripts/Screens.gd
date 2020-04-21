@@ -36,4 +36,6 @@ func show_gameend(is_good):
 	else: 
 		$GameendScreen.play("BadEnd")
 	yield($GameendScreen, "animation_finished")
+	$GameendScreen.stop()
+	$GameendScreen.frame = 47
 	playing = false
