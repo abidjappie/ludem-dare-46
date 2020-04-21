@@ -52,7 +52,6 @@ func _physics_process(delta):
 		
 		if (distance_from_player<32) and $AnimatedSprite.animation=="Attack" and in_front and !hit:
 			player.take_damage(5)
-			print("HIT")
 			hit = true
 			if player.position.x> position.x:
 				player.position.x += 6
@@ -81,9 +80,8 @@ func die():
 	is_alive = false
 	$AnimatedSprite.animation = "Idle"
 	$AnimatedSprite.stop()
-	death_audio.play()
+	$death_audio.play()
 	yield(death_audio, "finished")
-	print("DIE")
 	queue_free()
 
 func _on_Area2D_area_entered(area):

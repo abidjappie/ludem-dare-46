@@ -33,9 +33,13 @@ func show_gameend(is_good):
 	$GameendScreen.set_speed_scale(0.75)
 	if is_good: 
 		$GameendScreen.play("GoodEnd")
+		yield($GameendScreen, "animation_finished")
+		$GameendScreen.stop()
+		$GameendScreen.frame = 43
 	else: 
 		$GameendScreen.play("BadEnd")
-	yield($GameendScreen, "animation_finished")
-	$GameendScreen.stop()
-	$GameendScreen.frame = 47
+		yield($GameendScreen, "animation_finished")
+		$GameendScreen.stop()
+		$GameendScreen.frame = 40
+	$GameendScreen.hide()
 	playing = false
