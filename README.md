@@ -13,7 +13,7 @@ See the in-game instruction screens post-launch for input controls.
 ## Credits:
 
 - Abid Jappie (Lead artist, level designer, developer)
-- Zak Wren (Soundtrack & SFX)
+- Zak Wren (Soundtrack & sound FX)
 - Daniel Munday (Developer)
 - pie75 (Art and animations)
 
